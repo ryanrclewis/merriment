@@ -1,0 +1,49 @@
+<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="waxGradient" cx="40%" cy="50%">
+      <stop offset="0%" style="stop-color:#FFF8E7"/>
+      <stop offset="100%" style="stop-color:#E8D5C4"/>
+    </radialGradient>
+    <radialGradient id="flameGradient" cx="50%" cy="70%">
+      <stop offset="0%" style="stop-color:#FFFACD"/>
+      <stop offset="30%" style="stop-color:#FFD700"/>
+      <stop offset="60%" style="stop-color:#FF8C00"/>
+      <stop offset="100%" style="stop-color:#FF4500"/>
+    </radialGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Candle body with slight taper and wax drips -->
+  <path d="M 38 95 L 35 50 Q 35 45 38 40 L 38 35 Q 38 30 42 30 L 58 30 Q 62 30 62 35 L 62 40 Q 65 45 65 50 L 62 95 Z" 
+        fill="url(#waxGradient)" stroke="#D4C5B0" stroke-width="0.5"/>
+  
+  <!-- Wax drip details -->
+  <ellipse cx="45" cy="45" rx="2" ry="6" fill="#E8D5C4" opacity="0.6"/>
+  <ellipse cx="55" cy="50" rx="2" ry="7" fill="#E8D5C4" opacity="0.6"/>
+  
+  <!-- Candle top with melted wax pool -->
+  <ellipse cx="50" cy="30" rx="12" ry="3" fill="#FFF8E7"/>
+  <ellipse cx="50" cy="30" rx="10" ry="2.5" fill="#F5E6D3"/>
+  
+  <!-- Melted wax pool center -->
+  <ellipse cx="50" cy="30" rx="5" ry="1.5" fill="#E8D5C4"/>
+  
+  <!-- Wick -->
+  <rect x="49" y="18" width="2" height="12" fill="#3C3C3C" rx="0.5"/>
+  
+  <!-- Flame with glow -->
+  <g filter="url(#glow)">
+    <ellipse cx="50" cy="12" rx="8" ry="14" fill="url(#flameGradient)"/>
+    <ellipse cx="50" cy="12" rx="5" ry="10" fill="#FFD700" opacity="0.8"/>
+    <ellipse cx="50" cy="14" rx="3" ry="6" fill="#FFFACD"/>
+  </g>
+  
+  <!-- Flame highlight -->
+  <ellipse cx="50" cy="10" rx="2" ry="3" fill="#FFFFFF" opacity="0.6"/>
+</svg>
