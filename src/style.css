@@ -1,13 +1,31 @@
-@import url('https://fonts.googleapis.com/css2?family=IM+Fell+DW+Pica:ital@0;1&display=swap');
-
 :root {
-  --bg-color: #FDFBF7;
-  --text-color: #4A4036;
-  --accent-green: #8F9779;
-  --accent-rose: #D4B4B4;
+  /* Apple HIG-inspired color system with vibrant, high-contrast colors */
+  --bg-color: #FFFFFF;
+  --secondary-bg: #F5F5F7;
+  --text-color: #1D1D1F;
+  --text-secondary: #6E6E73;
+  --accent-primary: #007AFF;
+  --accent-secondary: #34C759;
   --card-bg: #FFFFFF;
-  --shadow-soft: 0 4px 6px rgba(74, 64, 54, 0.1);
-  --font-main: 'IM Fell DW Pica', serif;
+  --shadow-soft: 0 2px 10px rgba(0, 0, 0, 0.08);
+  --shadow-elevated: 0 4px 16px rgba(0, 0, 0, 0.12);
+  --border-color: rgba(0, 0, 0, 0.1);
+  
+  /* Apple system font stack */
+  --font-main: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  
+  /* Spacing system (8px base) */
+  --spacing-xs: 8px;
+  --spacing-sm: 16px;
+  --spacing-md: 24px;
+  --spacing-lg: 32px;
+  --spacing-xl: 48px;
+  --spacing-2xl: 64px;
+  
+  /* Border radius */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
 }
 
 * {
@@ -18,95 +36,169 @@
 
 body {
   font-family: var(--font-main);
-  background-color: var(--bg-color);
+  background-color: var(--secondary-bg);
   color: var(--text-color);
-  line-height: 1.6;
-  font-size: 1.2rem;
+  line-height: 1.5;
+  font-size: 17px; /* Apple standard body text size */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 a {
-  color: var(--text-color);
+  color: var(--accent-primary);
   text-decoration: none;
-  border-bottom: 1px dotted var(--accent-green);
-  transition: color 0.3s;
+  transition: opacity 0.2s ease;
 }
 
 a:hover {
-  color: var(--accent-green);
+  opacity: 0.7;
+}
+
+a:active {
+  opacity: 0.5;
 }
 
 h1, h2, h3 {
-  font-weight: 400;
-  margin-bottom: 1rem;
+  font-weight: 600; /* Apple uses semibold for headings */
+  margin-bottom: var(--spacing-sm);
+  letter-spacing: -0.02em; /* Tighter tracking for display text */
 }
 
 h1 {
-  font-size: 3rem;
-  font-style: italic;
+  font-size: 48px;
+  line-height: 1.1;
+  font-weight: 700; /* Bold for main title */
+}
+
+h2 {
+  font-size: 32px;
+  line-height: 1.2;
+}
+
+h3 {
+  font-size: 24px;
+  line-height: 1.3;
 }
 
 button {
-  background-color: var(--accent-green);
-  color: #fff;
+  /* Apple HIG: Minimum 44x44pt touch target */
+  background-color: var(--accent-primary);
+  color: #FFFFFF;
   border: none;
-  padding: 0.8rem 1.5rem;
+  padding: 14px 28px;
+  min-height: 44px;
   font-family: var(--font-main);
-  font-size: 1.1rem;
-  border-radius: 4px;
+  font-size: 17px;
+  font-weight: 500;
+  border-radius: var(--radius-md);
   cursor: pointer;
-  box-shadow: var(--shadow-soft);
-  transition: transform 0.1s, background-color 0.3s;
+  transition: all 0.2s ease;
+  box-shadow: none;
 }
 
 button:hover {
-  background-color: #7A8266; /* Slightly darker green */
-  transform: translateY(-2px);
+  background-color: #0051D5;
+  transform: scale(1.02);
+}
+
+button:active {
+  background-color: #004FC4;
+  transform: scale(0.98);
 }
 
 .card {
   background: var(--card-bg);
-  padding: 2rem;
-  border-radius: 8px;
-  box-shadow: var(--shadow-soft);
-  border: 1px solid rgba(143, 151, 121, 0.2);
+  padding: var(--spacing-lg);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-elevated);
+  border: none; /* Apple style: no borders, rely on shadows */
 }
 
 /* Layout Utilities */
 .container {
-  max-width: 1200px;
+  max-width: 980px; /* Apple often uses narrower max-width for readability */
   margin: 0 auto;
-  padding: 2rem;
+  padding: 0 var(--spacing-md);
 }
 
 header {
-  padding: 2rem 0;
+  padding: var(--spacing-lg) 0;
   text-align: center;
-  border-bottom: 2px solid var(--accent-rose);
-  margin-bottom: 3rem;
+  border-bottom: 1px solid var(--border-color);
+  margin-bottom: var(--spacing-xl);
+  background: var(--bg-color);
 }
 
 nav ul {
   list-style: none;
   display: flex;
   justify-content: center;
-  gap: 2rem;
-  margin-top: 1rem;
+  gap: var(--spacing-lg);
+  margin-top: var(--spacing-md);
 }
 
 nav a {
-  font-size: 1.4rem;
-  border: none;
+  font-size: 17px;
+  font-weight: 500;
+  /* Minimum 44x44pt touch target */
+  padding: 12px 16px;
+  display: inline-block;
 }
 
 nav a:hover {
-  color: var(--accent-rose);
+  opacity: 0.7;
 }
 
 footer {
-  margin-top: 4rem;
+  margin-top: var(--spacing-2xl);
   text-align: center;
-  font-size: 0.9rem;
-  opacity: 0.8;
-  padding: 2rem 0;
-  border-top: 1px solid var(--accent-green);
+  font-size: 14px;
+  color: var(--text-secondary);
+  padding: var(--spacing-lg) 0;
+  border-top: 1px solid var(--border-color);
+  background: var(--bg-color);
+}
+
+/* Responsive Design - Apple HIG emphasizes mobile-first */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 36px;
+  }
+  
+  h2 {
+    font-size: 28px;
+  }
+  
+  h3 {
+    font-size: 20px;
+  }
+  
+  .container {
+    padding: 0 var(--spacing-sm);
+  }
+  
+  nav ul {
+    gap: var(--spacing-sm);
+  }
+  
+  nav a {
+    padding: 12px 8px;
+    font-size: 15px;
+  }
+}
+
+/* Focus states for accessibility */
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid var(--accent-primary);
+  outline-offset: 2px;
+}
+
+/* Reduce motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
