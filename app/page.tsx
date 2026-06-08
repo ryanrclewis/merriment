@@ -51,7 +51,18 @@ export default function Home() {
     <>
       {/* ── Nav ── */}
       <nav className="site-nav on-dark" aria-label="Main navigation">
-        <span className="nav-logo">Merriment</span>
+        <a href="#" className="nav-logo-wrap" aria-label="Merriment home">
+          <svg width="28" height="35" viewBox="0 0 36 45" fill="none" stroke="white" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+            <path d="M18 1 L19.2 3.8 L18 6.5 L16.8 3.8 Z" />
+            <path d="M5 11 Q18 22 31 11" />
+            <line x1="5" y1="11" x2="13.5" y2="25" />
+            <line x1="31" y1="11" x2="22.5" y2="25" />
+            <line x1="13.5" y1="25" x2="22.5" y2="25" />
+            <line x1="18" y1="25" x2="18" y2="37" />
+            <path d="M10 37 Q18 39.5 26 37" />
+          </svg>
+          <span className="nav-logo-text">Merriment</span>
+        </a>
         <ul className="nav-links">
           <li><a href="#services">Services</a></li>
           <li><a href="#work">Work</a></li>
@@ -164,6 +175,7 @@ export default function Home() {
 
       {/* ── Inquire / Contact ── */}
       <section className="inquire-band" id="inquire" aria-labelledby="inquire-heading">
+        <img className="inquire-illustration" src="/IMG_3309.jpeg" alt="" aria-hidden="true" loading="lazy" />
         <div className="inquire-copy" id="about">
           <h2 id="inquire-heading">
             Let's plan something you'll never forget.
@@ -178,7 +190,18 @@ export default function Home() {
 
       {/* ── Footer ── */}
       <footer className="site-footer">
-        <span className="footer-logo">Merriment</span>
+        <a href="#" className="footer-logo-wrap" aria-label="Merriment home">
+          <svg width="22" height="28" viewBox="0 0 36 45" fill="none" stroke="#F0C87A" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+            <path d="M18 1 L19.2 3.8 L18 6.5 L16.8 3.8 Z" />
+            <path d="M5 11 Q18 22 31 11" />
+            <line x1="5" y1="11" x2="13.5" y2="25" />
+            <line x1="31" y1="11" x2="22.5" y2="25" />
+            <line x1="13.5" y1="25" x2="22.5" y2="25" />
+            <line x1="18" y1="25" x2="18" y2="37" />
+            <path d="M10 37 Q18 39.5 26 37" />
+          </svg>
+          <span className="footer-logo-text">Merriment</span>
+        </a>
         <nav aria-label="Footer navigation">
           <ul className="footer-links">
             <li><a href="#services">Services</a></li>

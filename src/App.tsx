@@ -2,6 +2,36 @@ import { useState, useRef } from "react";
 
 const EVENT_TYPES = ["Wedding","Engagement Party","Baby Shower","Birthday Celebration","Corporate Event","Anniversary","Holiday Party","Other"];
 
+// Handdrawn-style coupe glass + diamond sparkle, matches brand illustration
+function CoupeIcon({ size = 36, color = "currentColor" }: { size?: number; color?: string }) {
+  return (
+    <svg
+      width={size}
+      height={size * 1.25}
+      viewBox="0 0 36 45"
+      fill="none"
+      stroke={color}
+      strokeWidth="1.4"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+    >
+      {/* Diamond sparkle */}
+      <path d="M18 1 L19.2 3.8 L18 6.5 L16.8 3.8 Z" />
+      {/* Coupe bowl */}
+      <path d="M5 11 Q18 22 31 11" />
+      <line x1="5" y1="11" x2="13.5" y2="25" />
+      <line x1="31" y1="11" x2="22.5" y2="25" />
+      {/* Stem join */}
+      <line x1="13.5" y1="25" x2="22.5" y2="25" />
+      {/* Stem */}
+      <line x1="18" y1="25" x2="18" y2="37" />
+      {/* Base */}
+      <path d="M10 37 Q18 39.5 26 37" />
+    </svg>
+  );
+}
+
 function InlineContactForm() {
   const [status, setStatus] = useState<"idle"|"submitting"|"success"|"error">("idle");
   const [errorMsg, setErrorMsg] = useState("");
@@ -34,7 +64,7 @@ function InlineContactForm() {
   if (status === "success") {
     return (
       <div className="form-success" role="status">
-        <svg width="40" height="40" viewBox="0 0 40 40" fill="none"><circle cx="20" cy="20" r="19" stroke="currentColor" strokeWidth="1.5"/><path d="M12 20.5l5.5 5.5 10-11" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
+        <CoupeIcon size={40} color="#8BBFB0" />
         <h3>We got your note.</h3>
         <p>Thank you for reaching out. We'll be in touch within 1–2 business days.</p>
       </div>
@@ -109,7 +139,10 @@ export default function App() {
     <>
       {/* ── Nav ── */}
       <nav className="site-nav on-dark" aria-label="Main navigation">
-        <span className="nav-logo">Merriment</span>
+        <a href="#" className="nav-logo-wrap" aria-label="Merriment home">
+          <CoupeIcon size={28} color="white" />
+          <span className="nav-logo-text">Merriment</span>
+        </a>
         <ul className="nav-links">
           <li><a href="#services">Services</a></li>
           <li><a href="#work">Work</a></li>
@@ -229,6 +262,14 @@ export default function App() {
 
       {/* ── Inquire / Contact ── */}
       <section className="inquire-band" id="inquire" aria-labelledby="inquire-heading">
+        {/* Tower illustration — watermark in background */}
+        <img
+          className="inquire-illustration"
+          src="/IMG_3309.jpeg"
+          alt=""
+          aria-hidden="true"
+          loading="lazy"
+        />
         <div className="inquire-copy" id="about">
           <h2 id="inquire-heading">Let's plan something you'll never forget.</h2>
           <p>
@@ -240,8 +281,11 @@ export default function App() {
       </section>
 
       {/* ── Footer ── */}
-      <footer className="site-footer" id="about">
-        <span className="footer-logo">Merriment</span>
+      <footer className="site-footer">
+        <a href="#" className="footer-logo-wrap" aria-label="Merriment home">
+          <CoupeIcon size={22} color="#F0C87A" />
+          <span className="footer-logo-text">Merriment</span>
+        </a>
         <nav aria-label="Footer navigation">
           <ul className="footer-links">
             <li><a href="#services">Services</a></li>
