@@ -5,9 +5,10 @@
   "type": "module",
   "scripts": {
     "dev": "vite --port 3002",
+    "build": "vite build",
     "build:spa": "vite build",
     "deploy": "vinext deploy",
-    "cf:dev": "wrangler dev"
+    "cf:dev": "wrangler pages dev dist"
   },
   "dependencies": {
     "@cloudflare/vite-plugin": "^1.40.0",
