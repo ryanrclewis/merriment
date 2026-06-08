@@ -399,16 +399,7 @@ a     { color: inherit; text-decoration: none; }
 }
 
 .inquire-illustration {
-  position: absolute;
-  right: -20px;
-  bottom: -10px;
-  height: 85%;
-  width: auto;
-  object-fit: cover;
-  object-position: center bottom;
-  opacity: 0.12;
-  mix-blend-mode: multiply;
-  pointer-events: none;
+  display: none;
 }
 
 /* ── Contact Form ───────────────────────────────────────── */
