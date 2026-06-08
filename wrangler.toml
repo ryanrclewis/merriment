@@ -1,0 +1,6 @@
+name = "merriment"
+compatibility_date = "2025-01-01"
+compatibility_flags = ["nodejs_compat"]
+
+[vars]
+# Set these via `wrangler secret put RESEND_API_KEY` and `wrangler secret put CONTACT_EMAIL`
