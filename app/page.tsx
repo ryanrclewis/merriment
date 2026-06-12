@@ -1,5 +1,6 @@
 import "./globals.css";
 import { ContactForm } from "./components/ContactForm";
+import { GiftIntro } from "./components/GiftIntro";
 
 const services = [
   {
@@ -49,6 +50,8 @@ const testimonials = [
 export default function Home() {
   return (
     <>
+      <GiftIntro />
+
       {/* ── Nav ── */}
       <nav className="site-nav on-dark" aria-label="Main navigation">
         <a href="#" className="nav-logo-wrap" aria-label="Merriment home">

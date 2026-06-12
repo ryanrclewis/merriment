@@ -1,4 +1,5 @@
 import { useState, useRef } from "react";
+import { GiftIntro } from "../app/components/GiftIntro";
 
 const EVENT_TYPES = ["Wedding","Engagement Party","Baby Shower","Birthday Celebration","Corporate Event","Anniversary","Holiday Party","Other"];
 
@@ -137,6 +138,8 @@ const testimonials = [
 export default function App() {
   return (
     <>
+      <GiftIntro />
+
       {/* ── Nav ── */}
       <nav className="site-nav on-dark" aria-label="Main navigation">
         <a href="#" className="nav-logo-wrap" aria-label="Merriment home">
